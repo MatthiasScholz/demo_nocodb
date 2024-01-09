@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    restart: unless-stopped
+    networks:
+      - net-nocodb
+    ports:
+      - 8089:8080
+
+networks:
+  net-nocodb:
+    name: net-nocodb
+    external: false
